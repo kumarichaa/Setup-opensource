@@ -1,18 +1,20 @@
-UERANSIM INSTALLATION
-
-I make this document using UERANSIM official website
+UERANSIM Installation Guide
+This document is based on the official UERANSIM installation guide:
 website link: https://github.com/aligungr/UERANSIM/wiki/Installation
 
-1. Installation UERANSIM
-    . Turn on your Linux based System debian/ubuntu as well as if you don't have LINUX OS then Use You need to make virtual machine on windows/mac OS
-I have setup ubuntu environment on local so I used it and set on that
-Login with user -- sudo su
-password: Your Password
+1. Environment Setup
+Use a Linux-based system (Debian/Ubuntu recommended).
 
-2. update your system
-cmd: sudo apt update
+If you do not have a Linux OS, create a virtual machine on Windows or macOS.
 
-3. Install all dependency related to UERANSIM
+I have set up an Ubuntu environment locally and used that for this installation.
+Login with user:
+$ sudo su
+Password: [Your Password]
+
+2. Update Your System
+sudo apt update
+3. Install UERANSIM Dependencies
 sudo apt install make
 sudo apt install gcc
 sudo apt install g++
@@ -20,17 +22,29 @@ sudo apt install libsctp-dev lksctp-tools
 sudo apt install iproute2
 sudo snap install cmake --classic
 
+4. Build UERANSIM from Source
+Specify the location where you want to install UERANSIM. For example:
+cd /usr/local/src/
+git clone https://github.com/aligungr/UERANSIM
 
-4. Build from source UERANSIM
-specifies your desired location to install UERANSIM
-e.g. cd /usr/local/src/  
-git clone https://github.com/aligungr/UERANSIM 
+5. Compile UERANSIM
+cd /usr/local/src/UERANSIM/
+make
 
-5. Go to UERANSIM
-e.g. cd /usr/local/src/UERANSIM/
-cmd: make
+6. Verify Installation
+For testing purposes, run:
+make install
 
-6. For test Purpose Check everything is installed successfully or not 
-cmd: make install
+7. After Successful Compilation
+The compiled binaries will be located in the UERANSIM/build/ directory:
 
-7. 
+nr-cli: CLI tool for 5G UE and RAN interaction.
+
+nr-gnb: Main executable for 5G gNodeB (gNB).
+
+nr-ue: Main executable for 5G UE.
+
+nr-binder: Tool to enable internet connectivity for UE.
+
+libdevbnd.so: Dynamic library used by nr-binder.
+
