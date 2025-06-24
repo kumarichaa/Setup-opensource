@@ -16,7 +16,6 @@ Use a Linux-based system (Debian/Ubuntu recommended).
 
 If you don’t have Linux, you can create a virtual machine on Windows or macOS.
 
-In this guide, we use VM environment.
 ``` sudo su ```
  Enter your password
 2. Update Your System
