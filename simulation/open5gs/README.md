@@ -1,6 +1,6 @@
-Open5GS Installation Guide
-This document is based on the official Open5GS installation guide:
-Website link: https://open5gs.org/open5gs/docs/guide/
+### Open5GS Installation Guide ###
+## This document is based on the official Open5GS installation guide:
+## Website link: https://open5gs.org/open5gs/docs/guide/ ##
 
 Installation Methods
 There are two ways to install Open5GS:
