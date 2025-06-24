@@ -10,10 +10,10 @@ Use a Linux-based system (Debian/Ubuntu recommended).
 If you do not have a Linux OS, create a virtual machine on Windows or macOS.
 
 I have set up a VM environment and used that for this installation.
-
 Login with user:
-$ sudo su
-Password: [Your Password]
+
+sudo su
+Enter Password
 
 2. Update Your System
 sudo apt update
