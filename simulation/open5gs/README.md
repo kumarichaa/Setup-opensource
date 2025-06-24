@@ -26,8 +26,9 @@ If you don’t have Linux, you can create a virtual machine on Windows or macOS.
 ## 3. Install MongoDB
 Follow the official MongoDB installation guide for Ubuntu:
 Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
-![mongod_status](../../Pictures/mongod_status.png) 
     systemctl enable mongod [ Auto restart of mongod service ]
+
+![mongod_status](../../Pictures/mongod_status.png) 
 
 ## 4. Create tunnel for open5gs
     sudo ip tuntap add name ogstun mode tun 
