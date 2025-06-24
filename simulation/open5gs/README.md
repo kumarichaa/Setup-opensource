@@ -18,7 +18,7 @@ Use a Linux-based system (Debian/Ubuntu recommended).
 If you don’t have Linux, you can create a virtual machine on Windows or macOS.
 
 In this guide, we use VM environment.
-$ sudo su
+[ sudo su ]
 # Enter your password
 2. Update Your System
 sudo apt update
@@ -26,6 +26,8 @@ sudo apt update
 Follow the official MongoDB installation guide for Ubuntu:
 Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
 ![mongod_status](../../Pictures/mongod_status.png)     
+
+[this command to make MongoDB run every time you turn on the VM]
 
 
 
