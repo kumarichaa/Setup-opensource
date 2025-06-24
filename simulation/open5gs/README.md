@@ -25,10 +25,6 @@ Follow the official MongoDB installation guide for Ubuntu:
 Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
 ![mongod_status](../../Pictures/mongod_status.png)     
 
-[this command to make MongoDB run every time you turn on the VM]
-
-
-
 4. Create tunnel for open5gs
 sudo ip tuntap add name ogstun mode tun
 sudo ip addr add 10.45.0.1/16 dev ogstun
