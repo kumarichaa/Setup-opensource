@@ -72,12 +72,12 @@ After all the changes are made according to the requirement, run the following:
 
 $ ./nr-gnb -c ../config/open5gs-gnb.yaml
 ![gNB UERANSIM](../../Pictures/gNB_success_connects_core.png)
-![gNB wireshark](../../Pictures/wireshark_ngap_gNB.png)
+![gNB wireshark](../../Pictures/Wireshark_ngap_gNB.png)
 
 
 $ ./nr-ue -c ../config/open5gs-ue.yaml
 ![UE UERANSIM](../../Pictures/Ue_attached.png)
-![UE wireshark](../../Pictures/wireshark_UE.png)
+![UE wireshark](../../Pictures/Wireshark_UE.png)
 ![UE ping](../../Pictures/UE_ping.png)
 
 
