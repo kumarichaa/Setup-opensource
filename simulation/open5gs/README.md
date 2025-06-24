@@ -1,8 +1,10 @@
 ### Open5GS Installation Guide
 This document is based on the official Open5GS installation guide: https://open5gs.org/open5gs/docs/guide/
 
-Installation Methods
+Installation Methods:
+
 There are two ways to install Open5GS:
+
  A. Building from Source(https://open5gs.org/open5gs/docs/guide/02-building-open5gs-from-sources/)
 This method involves downloading the actual source code of Open5GS (from GitHub or official repositories) and manually compiling it on your system.
 
@@ -22,8 +24,8 @@ If you don’t have Linux, you can create a virtual machine on Windows or macOS.
 ## 2. Update Your System
     sudo apt update 
 ## 3. Install MongoDB
-    Follow the official MongoDB installation guide for Ubuntu:
-    Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+Follow the official MongoDB installation guide for Ubuntu:
+Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
 ![mongod_status](../../Pictures/mongod_status.png) 
     systemctl enable mongod [ Auto restart of mongod service ]
 
@@ -61,9 +63,6 @@ If you don’t have Linux, you can create a virtual machine on Windows or macOS.
 ## Run All Tests
     cd build 
     meson test -v 
-## Install Open5GS
-    cd build 
-    cd ../ 
 
 ## 8. Building the WebUI of Open5GS ( Node.js is required ) 
     sudo apt update 
@@ -138,7 +137,7 @@ Changes according to need then save it and start services
     ./install/bin/open5gs-nssfd 
 
 ## For All network functions 
-    ./build/tests/app/app ``
+    ./build/tests/app/app 
 ![open5gs_status](../../Pictures/Network_funtions_status_check.png)
 
 ## Here attached all log files
