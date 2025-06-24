@@ -151,8 +151,8 @@ $ ./build/tests/app/app
 Here attached all log files
 ![AMF_gNB_attach_log](../../Pictures/AMF_log.png) 
 ![AMF_UE_attach_log](../../Pictures/AMF_UE.png) 
-![gNB wireshark](../../Pictures/wireshark_ngap_gNB.png)
-![UE wireshark](../../Pictures/wireshark_UE.png)
+![gNB wireshark](../../Pictures/Wireshark_ngap_gNB.png)
+![UE wireshark](../../Pictures/Wireshark_UE.png)
 
 
 
