@@ -77,19 +77,19 @@ Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ub
     sudo apt update 
     sudo apt install nodejs -y 
 
-## Install the dependencies to run WebUI
+#### Install the dependencies to run WebUI
     cd webui 
     npm ci 
 
-# The WebUI runs as an npm script.
+#### The WebUI runs as an npm script.
     npm run dev 
 
-# Server listening can be changed by setting the environment variable HOSTNAME or PORT as below.
+#### Server listening can be changed by setting the environment variable HOSTNAME or PORT as below.
 
     HOSTNAME=192.168.0.11 npm run dev (IP Address of WEBUI service which you wanted to take otherwise runs on localhost)
     PORT=7777 npm run dev 
 
-# Register Subscriber Information http://127.0.0.1:9999 and login with admin account.
+#### Register Subscriber Information http://127.0.0.1:9999 and login with admin account.
     Username : admin 
     Password : 1423 
 ![open5gs_webui](../../Pictures/open5gs_webui.png)     
