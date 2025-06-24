@@ -1,4 +1,3 @@
-
 Open5GS Installation Guide
 This document is based on the official Open5GS installation guide:
 Website link: https://open5gs.org/open5gs/docs/guide/
@@ -18,10 +17,10 @@ Use a Linux-based system (Debian/Ubuntu recommended).
 If you don’t have Linux, you can create a virtual machine on Windows or macOS.
 
 In this guide, we use VM environment.
-[ sudo su ]
-# Enter your password
+``` sudo su ```
+ Enter your password
 2. Update Your System
-sudo apt update
+``` sudo apt update ```
 3. Install MongoDB
 Follow the official MongoDB installation guide for Ubuntu:
 Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
