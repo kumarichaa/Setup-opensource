@@ -20,9 +20,9 @@ If you don’t have Linux, you can create a virtual machine on Windows or macOS.
     sudo su 
     Enter your password 
 
-
 ## 2. Update Your System
     sudo apt update 
+
 ## 3. Install MongoDB
 Follow the official MongoDB installation guide for Ubuntu:
 Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
@@ -55,11 +55,13 @@ Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ub
     git clone https://github.com/open5gs/open5gs 
     cd open5gs 
     meson build --prefix=`pwd`/install 
-![AMF_gNB_attach_log](../../Pictures/open5gs_meson_build.png) 
     ninja -C build 
+![AMF_gNB_attach_log](../../Pictures/open5gs_meson_build.png) 
+
 ## Run Basic Tests
     ./build/tests/attach/attach            # For EPC Only
     ./build/tests/registration/registration     # For 5G Core Only
+
 ## Run All Tests
     cd build 
     meson test -v 
@@ -73,20 +75,24 @@ Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ub
     echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list 
     sudo apt update 
     sudo apt install nodejs -y 
+
 ## Install the dependencies to run WebUI
     cd webui 
     npm ci 
+
 ## The WebUI runs as an npm script.
     npm run dev 
+
 ## Server listening can be changed by setting the environment variable HOSTNAME or PORT as below.
-    HOSTNAME=192.168.0.11 npm run dev (IP Address of WEBUI service which you wanted to take)
+
+    HOSTNAME=192.168.0.11 npm run dev (IP Address of WEBUI service which you wanted to take otherwise runs on localhost)
     PORT=7777 npm run dev 
 
-## Register Subscriber Information
-## Connect to http://127.0.0.1:9999 and login with admin account.
+## Register Subscriber Information http://127.0.0.1:9999 and login with admin account.
     Username : admin 
     Password : 1423 
 ![open5gs_webui](../../Pictures/open5gs_webui.png)     
+
 
 
 ## Second Method
@@ -109,6 +115,7 @@ Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ub
     sudo apt install nodejs -y 
     Step 5: Install Open5GS WebUI
     curl -fsSL https://open5gs.org/open5gs/assets/webui/install | sudo -E bash -  
+ 
  ## After successful build this type of page appears:
  ![open5gs_webui](../../Pictures/open5gs_webui.png)     
     
@@ -117,7 +124,7 @@ Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ub
     -> When building from source, you must manually create systemd service files for convenience and automatic startup.
 
 ## After successful compiled open5gs then time to configuration
-Go to location of config file
+    Go to location of config file
     cd /usr/local/src/open5gs/install/etc/open5gs/ 
 ![open5gs_config](../../Pictures/open5gs_config.png)
 
