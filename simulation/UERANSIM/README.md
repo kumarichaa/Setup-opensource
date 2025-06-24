@@ -10,7 +10,7 @@ Use a Linux-based system (Debian/Ubuntu recommended).
 If you do not have a Linux OS, create a virtual machine on Windows or macOS.
 I have set up a VM environment and used that for this installation.
 
-Login with user:
+## Login with user:
     sudo su
     Enter Password
 

@@ -24,9 +24,9 @@ If you don’t have Linux, you can create a virtual machine on Windows or macOS.
     sudo apt update 
 
 ## 3. Install MongoDB
+    systemctl enable mongod [ Auto restart of mongod service ]
 Follow the official MongoDB installation guide for Ubuntu:
 Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
-    systemctl enable mongod [ Auto restart of mongod service ]
 
 ![mongod_status](../../Pictures/mongod_status.png) 
 
