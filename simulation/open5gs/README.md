@@ -16,7 +16,7 @@ Use a Linux-based system (Debian/Ubuntu recommended).
 If you don’t have Linux, you can create a virtual machine on Windows or macOS.
 
 Login with your user
-## sudo su 
+``` sudo su ``` 
 ## Enter your password 
 
 
