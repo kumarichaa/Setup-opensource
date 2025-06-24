@@ -1,7 +1,7 @@
 ### Open5GS Installation Guide
-    This document is based on the official Open5GS installation guide: https://open5gs.org/open5gs/docs/guide/
+This document is based on the official Open5GS installation guide: https://open5gs.org/open5gs/docs/guide/
 
-## Installation Methods
+Installation Methods
     There are two ways to install Open5GS:
         A. Building from Source(https://open5gs.org/open5gs/docs/guide/02-building-open5gs-from-sources/)
         This method involves downloading the actual source code of Open5GS (from GitHub or official repositories) and manually compiling it on your system.
@@ -9,15 +9,19 @@
         B. Using APT(https://open5gs.org/open5gs/docs/guide/01-quickstart/)
         This method uses the APT package manager to install Open5GS with precompiled binaries—similar to any standard apt install process.
 
-### Steps
+## Steps
+
 ## 1. Environment Setup
 Use a Linux-based system (Debian/Ubuntu recommended).
 If you don’t have Linux, you can create a virtual machine on Windows or macOS.
 
+Login with your user
 ## sudo su 
-## Enter your password ```
+## Enter your password 
+
+
 ## 2. Update Your System
-``` sudo apt update ```
+    sudo apt update 
 ## 3. Install MongoDB
     Follow the official MongoDB installation guide for Ubuntu:
     Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
