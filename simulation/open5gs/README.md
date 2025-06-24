@@ -14,8 +14,8 @@
 Use a Linux-based system (Debian/Ubuntu recommended).
 If you don’t have Linux, you can create a virtual machine on Windows or macOS.
 
-``` sudo su ```
-``` Enter your password ```
+## sudo su 
+## Enter your password ```
 ## 2. Update Your System
 ``` sudo apt update ```
 ## 3. Install MongoDB
