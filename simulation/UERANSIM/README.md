@@ -90,3 +90,6 @@ The compiled binaries will be located in the UERANSIM/build/ directory:
 If all configuration is applied correctly, then the UE and gNB should successfully connect with the core, and logs will be shown accordingly.
 
 For more information attached wireshark packets also captured_pcap folder
+
+Note: 
+    I completed the integration of open-source tools for learning purposes, primarily using official documentation from Open5GS and UERANSIM.

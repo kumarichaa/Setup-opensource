@@ -11,38 +11,38 @@ This method involves downloading the actual source code of Open5GS (from GitHub 
  B. Using APT(https://open5gs.org/open5gs/docs/guide/01-quickstart/)
 This method uses the APT package manager to install Open5GS with precompiled binaries—similar to any standard apt install process.
 
-## Steps
+### Steps
  1. Environment Setup
 Use a Linux-based system (Debian/Ubuntu recommended).
 If you don’t have Linux, you can create a virtual machine on Windows or macOS.
 
-## Login with your user
+### Login with your user
     sudo su 
     Enter your password 
 
-## 2. Update Your System
+### 2. Update Your System
     sudo apt update 
 
-## 3. Install MongoDB
+### 3. Install MongoDB
     systemctl enable mongod [ Auto restart of mongod service ]
 Follow the official MongoDB installation guide for Ubuntu:
 Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
 
 ![mongod_status](../../Pictures/mongod_status.png) 
 
-## 4. Create tunnel for open5gs
+### 4. Create tunnel for open5gs
     sudo ip tuntap add name ogstun mode tun 
     sudo ip addr add 10.45.0.1/16 dev ogstun 
     sudo ip addr add 2001:db8:cafe::1/48 dev ogstun 
     sudo ip link set ogstun up 
 ![tunnel_create](../../Pictures/tunnel_create.png)     
 
-## 5. Install common dependencies for building the source code
+### 5. Install common dependencies for building the source code
     sudo apt install python3-pip python3-setuptools python3-wheel ninja-build build-essential flex bison git cmake \ 
     libsctp-dev libgnutls28-dev libgcrypt-dev libssl-dev libmongoc-dev libbson-dev libyaml-dev \ 
     libnghttp2-dev libmicrohttpd-dev libcurl4-gnutls-dev libtins-dev libtalloc-dev meson 
 
-## 6 . Install libidn-dev or libidn11-dev depending on your system
+### 6 . Install libidn-dev or libidn11-dev depending on your system
 
     if apt-cache show libidn-dev > /dev/null 2>&1; then 
     sudo apt-get install -y --no-install-recommends libidn-dev 
@@ -50,7 +50,7 @@ Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ub
         sudo apt-get install -y --no-install-recommends libidn11-dev 
     fi 
 
-## 7. Building from Source
+### 7. Building from Source
     Specify the location where you want to install open5gs. For example:
     cd /usr/local/src/ 
     git clone https://github.com/open5gs/open5gs 
@@ -59,15 +59,15 @@ Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ub
     ninja -C build 
 ![AMF_gNB_attach_log](../../Pictures/open5gs_meson_build.png) 
 
-## Run Basic Tests
+### Run Basic Tests
     ./build/tests/attach/attach            # For EPC Only
     ./build/tests/registration/registration     # For 5G Core Only
 
-## Run All Tests
+### Run All Tests
     cd build 
     meson test -v 
 
-## 8. Building the WebUI of Open5GS ( Node.js is required ) 
+### 8. Building the WebUI of Open5GS ( Node.js is required ) 
     sudo apt update 
     sudo apt install -y ca-certificates curl gnupg 
     sudo mkdir -p /etc/apt/keyrings 
@@ -77,26 +77,26 @@ Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ub
     sudo apt update 
     sudo apt install nodejs -y 
 
-#### Install the dependencies to run WebUI
+### Install the dependencies to run WebUI
     cd webui 
     npm ci 
 
-#### The WebUI runs as an npm script.
+### The WebUI runs as an npm script.
     npm run dev 
 
-#### Server listening can be changed by setting the environment variable HOSTNAME or PORT as below.
+### Server listening can be changed by setting the environment variable HOSTNAME or PORT as below.
 
     HOSTNAME=192.168.0.11 npm run dev (IP Address of WEBUI service which you wanted to take otherwise runs on localhost)
     PORT=7777 npm run dev 
 
-#### Register Subscriber Information http://127.0.0.1:9999 and login with admin account.
+### Register Subscriber Information http://127.0.0.1:9999 and login with admin account.
     Username : admin 
     Password : 1423 
 ![open5gs_webui](../../Pictures/open5gs_webui.png)     
 
 
 
-## Second Method
+### Second Method
     step 1. Installing Using APT
     Add Repository and Install Open5GS
     sudo add-apt-repository ppa:open5gs/latest 
@@ -117,21 +117,21 @@ Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ub
     Step 5: Install Open5GS WebUI
     curl -fsSL https://open5gs.org/open5gs/assets/webui/install | sudo -E bash -  
  
- ## After successful build this type of page appears:
+### After successful build this type of page appears:
  ![open5gs_webui](../../Pictures/open5gs_webui.png)     
     
-## Notes
+### Notes
     -> When using APT to install Open5GS, all necessary systemd service files are created automatically.
     -> When building from source, you must manually create systemd service files for convenience and automatic startup.
 
-## After successful compiled open5gs then time to configuration
+### After successful compiled open5gs then time to configuration
     Go to location of config file
     cd /usr/local/src/open5gs/install/etc/open5gs/ 
 ![open5gs_config](../../Pictures/open5gs_config.png)
 
 Changes according to need then save it and start services 
 
-## Run individual network functions then 
+### Run individual network functions then 
     ./install/bin/open5gs-amfd 
     ./install/bin/open5gs-nrfd 
     ./install/bin/open5gs-scpd 
@@ -144,15 +144,19 @@ Changes according to need then save it and start services
     ./install/bin/open5gs-bsfd 
     ./install/bin/open5gs-nssfd 
 
-## For All network functions 
+### For All network functions 
     ./build/tests/app/app 
 ![open5gs_status](../../Pictures/Network_funtions_status_check.png)
 
-## Here attached all log files
+### Here attached all log files
 ![AMF_gNB_attach_log](../../Pictures/AMF_log.png) 
 ![AMF_UE_attach_log](../../Pictures/AMF_UE.png) 
 ![gNB wireshark](../../Pictures/Wireshark_ngap_gNB.png)
 ![UE wireshark](../../Pictures/Wireshark_UE.png)
+
+
+Note: 
+    I completed the integration of open-source tools for learning purposes, primarily using official documentation from Open5GS and UERANSIM.
 
 
 
