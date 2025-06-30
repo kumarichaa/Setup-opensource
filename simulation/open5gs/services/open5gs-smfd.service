@@ -1,5 +1,5 @@
 Location:
-    nano /etc/systemd/system/open5gs-amfd.service
+    nano /etc/systemd/system/open5gs-smfd.service
 
 [Unit]
 Description=Open5GS SMF daemon
