@@ -11,33 +11,33 @@ If you do not have a Linux OS, create a virtual machine on Windows or macOS.
 I have set up a VM environment and used that for this installation.
 
 ## Login with user:
-    sudo su
-    Enter Password
+    $ sudo su
+    $ Enter Password
 
 ## 2. Update Your System
-    sudo apt update
+    $ sudo apt update
 
 ## 3. Install UERANSIM Dependencies
-    sudo apt install make
-    sudo apt install gcc
-    sudo apt install g++
-    sudo apt install libsctp-dev lksctp-tools
-    sudo apt install iproute2
-    sudo snap install cmake --classic
+    $ sudo apt install make
+    $ sudo apt install gcc
+    $ sudo apt install g++
+    $ sudo apt install libsctp-dev lksctp-tools
+    $ sudo apt install iproute2
+    $ sudo snap install cmake --classic
 
 ## 4. Build UERANSIM from Source
 Specify the location where you want to install UERANSIM. For example:
-    cd /usr/local/src/
-    git clone https://github.com/aligungr/UERANSIM
+    $ cd /usr/local/src/
+    $ git clone https://github.com/aligungr/UERANSIM
 
 ## 5. Compile UERANSIM
-    cd /usr/local/src/UERANSIM/
-    make
+    $ cd /usr/local/src/UERANSIM/
+    $ make
 ![Successful build UERANSIM](../../Pictures/UERANSIM_Build.png)
 
 ## 6. After Successful Compilation
 The compiled binaries will be located in the UERANSIM/build/ directory:
-    cd UERANSIM/build/
+    $ cd UERANSIM/build/
     nr-cli: CLI tool for 5G UE and RAN interaction.
     nr-gnb: Main executable for 5G gNodeB (gNB).
     nr-ue: Main executable for 5G UE.
@@ -48,7 +48,7 @@ The compiled binaries will be located in the UERANSIM/build/ directory:
 
 
 ## 1. Configuration of UERANSIM
-    cd UERANSIM/config/
+    $ cd UERANSIM/config/
 
 ![Config file UERANSIM](../../Pictures/UERANSIM_config.png)
 

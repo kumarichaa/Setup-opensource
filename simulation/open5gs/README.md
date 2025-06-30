@@ -17,28 +17,28 @@ Use a Linux-based system (Debian/Ubuntu recommended).
 If you don’t have Linux, you can create a virtual machine on Windows or macOS.
 
 ### Login with your user
-    sudo su 
-    Enter your password 
+    $ sudo su 
+    $ Enter your password 
 
 ### 2. Update Your System
-    sudo apt update 
+    $ sudo apt update 
 
 ### 3. Install MongoDB
-    systemctl enable mongod [ Auto restart of mongod service ]
+    $ systemctl enable mongod [ Auto restart of mongod service ]
 Follow the official MongoDB installation guide for Ubuntu:
 Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
 
 ![mongod_status](../../Pictures/mongod_status.png) 
 
 ### 4. Create tunnel for open5gs
-    sudo ip tuntap add name ogstun mode tun 
-    sudo ip addr add 10.45.0.1/16 dev ogstun 
-    sudo ip addr add 2001:db8:cafe::1/48 dev ogstun 
-    sudo ip link set ogstun up 
+    $ sudo ip tuntap add name ogstun mode tun 
+    $ sudo ip addr add 10.45.0.1/16 dev ogstun 
+    $ sudo ip addr add 2001:db8:cafe::1/48 dev ogstun 
+    $ sudo ip link set ogstun up 
 ![tunnel_create](../../Pictures/tunnel_create.png)     
 
 ### 5. Install common dependencies for building the source code
-    sudo apt install python3-pip python3-setuptools python3-wheel ninja-build build-essential flex bison git cmake \ 
+    $ sudo apt install python3-pip python3-setuptools python3-wheel ninja-build build-essential flex bison git cmake \ 
     libsctp-dev libgnutls28-dev libgcrypt-dev libssl-dev libmongoc-dev libbson-dev libyaml-dev \ 
     libnghttp2-dev libmicrohttpd-dev libcurl4-gnutls-dev libtins-dev libtalloc-dev meson 
 
@@ -52,42 +52,42 @@ Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ub
 
 ### 7. Building from Source
     Specify the location where you want to install open5gs. For example:
-    cd /usr/local/src/ 
-    git clone https://github.com/open5gs/open5gs 
-    cd open5gs 
-    meson build --prefix=`pwd`/install 
-    ninja -C build 
+    $ cd /usr/local/src/ 
+    $ git clone https://github.com/open5gs/open5gs 
+    $ cd open5gs 
+    $ meson build --prefix=`pwd`/install 
+    $ ninja -C build 
 ![AMF_gNB_attach_log](../../Pictures/open5gs_meson_build.png) 
 
 ### Run Basic Tests
-    ./build/tests/attach/attach            # For EPC Only
-    ./build/tests/registration/registration     # For 5G Core Only
+    $ ./build/tests/attach/attach            # For EPC Only
+    $ ./build/tests/registration/registration     # For 5G Core Only
 
 ### Run All Tests
-    cd build 
-    meson test -v 
+    $ cd build 
+    $ meson test -v 
 
 ### 8. Building the WebUI of Open5GS ( Node.js is required ) 
-    sudo apt update 
-    sudo apt install -y ca-certificates curl gnupg 
-    sudo mkdir -p /etc/apt/keyrings 
-    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg 
-    NODE_MAJOR=20 
-    echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list 
-    sudo apt update 
-    sudo apt install nodejs -y 
+    $ sudo apt update 
+    $ sudo apt install -y ca-certificates curl gnupg 
+    $ sudo mkdir -p /etc/apt/keyrings 
+    $ curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg 
+    $ NODE_MAJOR=20 
+    $ echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list 
+    $ sudo apt update 
+    $ sudo apt install nodejs -y 
 
 ### Install the dependencies to run WebUI
-    cd webui 
-    npm ci 
+    $ cd webui 
+    $ npm ci 
 
 ### The WebUI runs as an npm script.
-    npm run dev 
+    $ npm run dev 
 
 ### Server listening can be changed by setting the environment variable HOSTNAME or PORT as below.
 
-    HOSTNAME=192.168.0.11 npm run dev (IP Address of WEBUI service which you wanted to take otherwise runs on localhost)
-    PORT=7777 npm run dev 
+    $ HOSTNAME=192.168.0.11 npm run dev (IP Address of WEBUI service which you wanted to take otherwise runs on localhost)
+    $ PORT=7777 npm run dev 
 
 ### Register Subscriber Information http://127.0.0.1:9999 and login with admin account.
     Username : admin 
@@ -99,23 +99,23 @@ Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ub
 ### Second Method
     step 1. Installing Using APT
     Add Repository and Install Open5GS
-    sudo add-apt-repository ppa:open5gs/latest 
-    sudo apt update 
-    sudo apt install open5gs 
+    $ sudo add-apt-repository ppa:open5gs/latest 
+    $ sudo apt update 
+    $ sudo apt install open5gs 
     step 2. Install the Open5GS WebUI
-    sudo apt update 
-    sudo apt install -y ca-certificates curl gnupg 
-    sudo mkdir -p /etc/apt/keyrings 
-    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg 
+    $ sudo apt update 
+    $ sudo apt install -y ca-certificates curl gnupg 
+    $ sudo mkdir -p /etc/apt/keyrings 
+    $ curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg 
     Step 3: Add the Node.js Repository
-    NODE_MAJOR=20 
+    $ NODE_MAJOR=20 
     echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | \ 
-    sudo tee /etc/apt/sources.list.d/nodesource.list 
+    $ sudo tee /etc/apt/sources.list.d/nodesource.list 
     Step 4: Update and Install Node.js
-    sudo apt update 
-    sudo apt install nodejs -y 
+    $ sudo apt update 
+    $ sudo apt install nodejs -y 
     Step 5: Install Open5GS WebUI
-    curl -fsSL https://open5gs.org/open5gs/assets/webui/install | sudo -E bash -  
+    $ curl -fsSL https://open5gs.org/open5gs/assets/webui/install | sudo -E bash -  
  
 ### After successful build this type of page appears:
  ![open5gs_webui](../../Pictures/open5gs_webui.png)     
@@ -126,26 +126,26 @@ Website link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ub
 
 ### After successful compiled open5gs then time to configuration
     Go to location of config file
-    cd /usr/local/src/open5gs/install/etc/open5gs/ 
+    $ cd /usr/local/src/open5gs/install/etc/open5gs/ 
 ![open5gs_config](../../Pictures/open5gs_config.png)
 
 Changes according to need then save it and start services 
 
 ### Run individual network functions then 
-    ./install/bin/open5gs-amfd 
-    ./install/bin/open5gs-nrfd 
-    ./install/bin/open5gs-scpd 
-    ./install/bin/open5gs-ausfd 
-    ./install/bin/open5gs-pcfd 
-    ./install/bin/open5gs-udmd 
-    ./install/bin/open5gs-udrd 
-    ./install/bin/open5gs-smfd 
-    ./install/bin/open5gs-upfd 
-    ./install/bin/open5gs-bsfd 
-    ./install/bin/open5gs-nssfd 
+    $ ./install/bin/open5gs-amfd 
+    $ ./install/bin/open5gs-nrfd 
+    $ ./install/bin/open5gs-scpd 
+    $ ./install/bin/open5gs-ausfd 
+    $ ./install/bin/open5gs-pcfd 
+    $ ./install/bin/open5gs-udmd 
+    $ ./install/bin/open5gs-udrd 
+    $ ./install/bin/open5gs-smfd 
+    $ ./install/bin/open5gs-upfd 
+    $ ./install/bin/open5gs-bsfd 
+    $ ./install/bin/open5gs-nssfd 
 
 ### For All network functions 
-    ./build/tests/app/app 
+    $ ./build/tests/app/app 
 ![open5gs_status](../../Pictures/Network_funtions_status_check.png)
 
 ### Here attached all log files

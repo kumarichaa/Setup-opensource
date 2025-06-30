@@ -24,14 +24,14 @@ More info: 3GPP TS 23.003
 
 To inspect a key:
 
-    $openssl pkey -in curve25519-1.key -text
+    $ openssl pkey -in curve25519-1.key -text
 
 For more details, refer to the udm.yaml file.
 
 ### Step 2: Add Public Key in UERANSIM
 
-    $cd /usr/local/src/UERANSIM/config
-    $nano open5gs-ue.yaml
+    $ cd /usr/local/src/UERANSIM/config
+    $ nano open5gs-ue.yaml
 
 Update the fields related to supi, key, and protection_scheme. Then save and exit.
 
@@ -48,8 +48,8 @@ Update the fields related to supi, key, and protection_scheme. Then save and exi
 
 Start the simulated gNB and UE:
 
-    $./nr-gnb -c ../config/open5gs-gnb.yaml
-    $./nr-ue -c ../config/open5gs-ue.yaml
+    $ ./nr-gnb -c ../config/open5gs-gnb.yaml
+    $ ./nr-ue -c ../config/open5gs-ue.yaml
 
 ### Step 5: View Core Logs
 
@@ -60,7 +60,7 @@ Tail AMF logs to verify the SUPI profile activity:
 ### To adjust the logging level (helpful during debugging):
 
     $ nano amf.yaml  # Update the log level to debug/info/etc.
-    $ systemctl restart open5gs-amfd.service
+    $ systemctl restart open5gs-amfd.service 
 
 ### Step 6: Attached all logs files 
 core
