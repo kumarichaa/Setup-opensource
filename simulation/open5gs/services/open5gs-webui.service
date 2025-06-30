@@ -1,0 +1,18 @@
+Location:
+    nano /etc/systemd/system/open5gs-webuis.service
+
+[Unit]
+Description=Open5GS WebUI
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/usr/local/src/open5gs/webui
+ExecStart=/usr/bin/env HOSTNAME=127.0.0.1 PORT=3000 npm run dev
+Restart=always
+RestartSec=5
+Environment=NODE_ENV=development
+User=root
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+Location:
+    nano /etc/systemd/system/open5gs-amfd.service
+
+[Unit]
+Description=Open5GS SMF daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/src/open5gs/install/bin/open5gs-smfd -c /usr/local/src/open5gs/install/etc/open5gs/smf.yaml
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

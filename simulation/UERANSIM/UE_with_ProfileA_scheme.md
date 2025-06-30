@@ -34,6 +34,8 @@ For more details, refer to the udm.yaml file.
     $ nano open5gs-ue.yaml
 
 Update the fields related to supi, key, and protection_scheme. Then save and exit.
+![ue_config_highlights](../../Pictures/ue_highlighted.png)
+
 
 ### Step 3: Restart Open5GS Core Services
 
@@ -43,6 +45,8 @@ Update the fields related to supi, key, and protection_scheme. Then save and exi
     open5gs-hssd.service open5gs-mmed.service open5gs-nrfd.service open5gs-nssfd.service \
     open5gs-pcfd.service open5gs-pcrfd.service open5gs-smfd.service open5gs-sgwcd.service \
     open5gs-sgwud.service open5gs-udmd.service open5gs-udrd.service open5gs-upfd.service
+
+To check the status of this type of service, you must first create a service unit file and enable it using systemd.
 
 ### Step 4: Run gNB and UE
 
@@ -56,6 +60,8 @@ Start the simulated gNB and UE:
 Tail AMF logs to verify the SUPI profile activity:
 
     $ tail -f /open5gs/install/var/log/open5gs/amf.log
+![AMF_logs](../../Pictures/AMF_logs.png)
+
 
 ### To adjust the logging level (helpful during debugging):
 
@@ -64,10 +70,17 @@ Tail AMF logs to verify the SUPI profile activity:
 
 ### Step 6: Attached all logs files 
 core
+![AMF_logs](../../Pictures/AMF_logs.png)
+
 gNB
+![gNB_logs](../../Pictures/gnb_logs.png)
+
 UE
+![UE_logs](../../Pictures/ue_logs.png)
 
 Also pcap files
+![Wireshark_pcap](../../Pictures/SUCI_profileA.png)
+
 
 
 Important Notes
@@ -77,3 +90,8 @@ Important Notes
 Note:
     I completed the integration of open-source tools for learning purposes, primarily using official documentation from Open5GS and UERANSIM.
 
+
+
+e421686f6fb2d70e3fa28d940494095686c3179fef53514667a6ed106b8a7d3d
+
+ce250543128636d15a187b881b7d158148363b0590382dc90bd536ab76602b37
