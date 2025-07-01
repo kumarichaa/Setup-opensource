@@ -1,5 +1,5 @@
 Location:
-    nano /etc/systemd/system/open5gs-webuis.service
+    nano /etc/systemd/system/open5gs-webui.service
 
 [Unit]
 Description=Open5GS WebUI

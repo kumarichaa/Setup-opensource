@@ -2,7 +2,7 @@ Location:
     nano /etc/systemd/system/open5gs-upfd.service
 
 [Unit]
-Description=Open5GS UDR daemon
+Description=Open5GS UPF daemon
 After=network.target
 
 [Service]

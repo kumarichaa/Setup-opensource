@@ -1,0 +1,14 @@
+Location:
+    nano /etc/systemd/system/open5gs-sgwud.service
+
+[Unit]
+Description=Open5GS SGWU daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/src/open5gs/install/bin/open5gs-sgwud -c /usr/local/src/open5gs/install/etc/open5gs/sgwu.yaml
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

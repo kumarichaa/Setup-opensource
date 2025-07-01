@@ -1,0 +1,14 @@
+Location:
+    nano /etc/systemd/system/open5gs-seppd.service
+
+[Unit]
+Description=Open5GS SEPP daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/src/open5gs/install/bin/open5gs-seppd -c /usr/local/src/open5gs/install/etc/open5gs/sepp.yaml
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
