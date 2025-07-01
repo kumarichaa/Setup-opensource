@@ -129,7 +129,6 @@ save and restart services
     $ ./nr-ue -c ../config/free5gc-ue.yaml
 
 ![UE UERANSIM](../../Pictures/free5gc_ue.png)
-![UE wireshark](../../Pictures/Wireshark_UE.png)
 
 
 
@@ -152,7 +151,7 @@ For more information attached wireshark packets also captured_pcap folder
 Note: 
     I completed the integration of open-source tools for learning purposes, primarily using official documentation from free5gc and UERANSIM.
 
-Resources:
-More Info visit Official Site: https://free5gc.org
-MongoDB Docs: https://www.mongodb.com/docs
-Go Lang Docs: https://golang.org/doc/install
+### More Info visit Official Site: 
+    Free5gc: https://free5gc.org
+    MongoDB Docs: https://www.mongodb.com/docs
+    Go Lang Docs: https://golang.org/doc/install
