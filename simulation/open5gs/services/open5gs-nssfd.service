@@ -1,0 +1,14 @@
+Location:
+    nano /etc/systemd/system/open5gs-nssfd.service
+
+[Unit]
+Description=Open5GS NSSF daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/src/open5gs/install/bin/open5gs-nssfd -c /usr/local/src/open5gs/install/etc/open5gs/nssf.yaml
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

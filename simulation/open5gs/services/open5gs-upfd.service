@@ -1,0 +1,14 @@
+Location:
+    nano /etc/systemd/system/open5gs-upfd.service
+
+[Unit]
+Description=Open5GS UDR daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/src/open5gs/install/bin/open5gs-upfd -c /usr/local/src/open5gs/install/etc/open5gs/upf.yaml
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

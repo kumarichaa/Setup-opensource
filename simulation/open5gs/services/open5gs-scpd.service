@@ -1,0 +1,14 @@
+Location:
+    nano /etc/systemd/system/open5gs-scpd.service
+
+[Unit]
+Description=Open5GS SCP daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/src/open5gs/install/bin/open5gs-scpd -c /usr/local/src/open5gs/install/etc/open5gs/scp.yaml
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

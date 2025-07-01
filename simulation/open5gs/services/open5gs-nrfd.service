@@ -1,0 +1,14 @@
+Location:
+    nano /etc/systemd/system/open5gs-nrfd.service
+
+[Unit]
+Description=Open5GS NRF daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/src/open5gs/install/bin/open5gs-nrfd -c /usr/local/src/open5gs/install/etc/open5gs/nrf.yaml
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
