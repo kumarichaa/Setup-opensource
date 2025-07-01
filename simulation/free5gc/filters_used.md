@@ -19,7 +19,7 @@ Protocol Analyzer Tools:
     $ sudo tcpdump -i any tcp port 7777 -w http2.pcapng # Capture HTTP/2 traffic (open5gs http2 port 7777)
     $ sudo tcpdump -i any udp port 2152 -w gtp.pcapng  # Capture GTP-U (UDP port 2152)
 
-### example: 
+### tshark Command: 
 
     # Filter by NGAP RAN_UE_NGAP_ID
     $ tshark -r "UE_ngap_protocol.pcap" \ -Y "ngap.RAN_UE_NGAP_ID == 1"  # Run to show the output on terminal
