@@ -12,7 +12,7 @@ Protocol Analyzer Tools:
     Command-line version of Wireshark.
     Ideal for extracting and filtering specific protocol elements from .pcap files.
 
-## tcpdump Commands:
+### tcpdump Commands:
     $ sudo tcpdump -i any -w file_name.pcapng  # Capture all traffic on all interfaces
     $ sudo tcpdump -i any sctp port 38412 -w ngap.pcapng # Capture NGAP (SCTP port 38412)
     $ sudo tcpdump -i any udp port 8805 -w pfcp.pcapng # Capture PFCP (UDP port 8805)
