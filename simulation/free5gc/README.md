@@ -1,7 +1,7 @@
 ### Free5GC Installation Guide
 
 This document is based on the official UERANSIM installation guide:
-Website: https://free5gc.org/guide/3-install-free5gc/
+    Website: https://free5gc.org/guide/3-install-free5gc/
 
 ## 1. Environment Setup
 
