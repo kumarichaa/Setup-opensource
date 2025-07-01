@@ -1,0 +1,26 @@
+Location
+    $ nano /etc/systemd/system/ueransim-gnb.service
+
+[Unit]
+Description=UERANSIM gNodeB Service
+After=network.target
+
+[Service]
+ExecStart=/home/coral/UERANSIM/build/nr-gnb -c /home/coral/UERANSIM/config/open5gs-gnb.yaml
+WorkingDirectory=/home/coral/UERANSIM/
+Restart=always
+User=coral
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+$ systemctl daemon-reload                   # Reload systemd unit files (use after creating/modifying service files)
+$ systemctl enable ueransim-gnb.service    # Enable the service to start automatically on system boot
+$ systemctl start ueransim-gnb.service     # Start the service immediately
+$ systemctl status ueransim-gnb.service    # Check the current status of the service
+$ systemctl stop ueransim-gnb.service      # Stop the service
+$ systemctl restart ueransim-gnb.service   # Restart the service (use after making changes to configuration files)

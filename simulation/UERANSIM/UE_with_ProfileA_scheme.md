@@ -48,6 +48,7 @@ Update the fields related to supi, key, and protection_scheme. Then save and exi
 
 To check the status of this type of service, you must first create a service unit file and enable it using systemd.
 
+
 ### Step 4: Run gNB and UE
 
 Start the simulated gNB and UE:

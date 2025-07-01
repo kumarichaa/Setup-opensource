@@ -12,3 +12,11 @@ Restart=always
 
 [Install]
 WantedBy=multi-user.target
+
+
+$ systemctl daemon-reload                   # Reload systemd unit files (use after creating/modifying service files)
+$ systemctl enable open5gs-amfd.service    # Enable the service to start automatically on system boot
+$ systemctl start open5gs-amfd.service     # Start the service immediately
+$ systemctl status open5gs-amfd.service    # Check the current status of the service
+$ systemctl stop open5gs-amfd.service      # Stop the service
+$ systemctl restart open5gs-amfd.service   # Restart the service (use after making changes to configuration files)
