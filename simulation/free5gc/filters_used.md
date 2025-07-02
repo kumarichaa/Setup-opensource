@@ -25,7 +25,7 @@ Protocol Analyzer Tools:
 
     # Filter by NGAP RAN_UE_NGAP_ID
     $ tshark -r "UE_ngap_protocol.pcap" \ -Y "ngap.RAN_UE_NGAP_ID == 1"  # Run to show the output on terminal
-    ![Wireshark_pcap](../../Pictures/tshark.png)
+ ![Wireshark_pcap](../../Pictures/tshark.png)
 
     $ tshark -r "ue_ngap_protocol.pcap" \ -Y "ngap.RAN_UE_NGAP_ID == 114689" \  -w "NGAP.pcapng"  # Run to store data on pcap file
  
