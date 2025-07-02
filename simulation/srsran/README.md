@@ -29,9 +29,7 @@ This guide outlines the steps for integrating Open5GS with srsRAN_4G using ZeroM
     $ nano ../build/srsenb/enb.conf
     $ nano ../build/srsenb/rr.conf   #Use loopback IPs for testing.
 
-
-### srsUE Configuration
-
+    ## srsUE Configuration
     $ cd srsRAN_4G/srsue
     $ cp ue.conf.example ../build/srsue/ue.conf
     $ nano ../build/srsue/ue.conf # changes like opc,key mnc,mcc,imsi etc
