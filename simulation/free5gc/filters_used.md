@@ -18,6 +18,8 @@ Protocol Analyzer Tools:
     $ sudo tcpdump -i any udp port 8805 -w pfcp.pcapng # Capture PFCP (UDP port 8805)
     $ sudo tcpdump -i any tcp port 7777 -w http2.pcapng # Capture HTTP/2 traffic (open5gs http2 port 7777)
     $ sudo tcpdump -i any udp port 2152 -w gtp.pcapng  # Capture GTP-U (UDP port 2152)
+    $ sudo tcpdump -i any sctp port 38412 -w s1ap.pcapng # Capture S1AP (SCTP port 38412)
+
 
 ### tshark Command: 
 
