@@ -1,7 +1,7 @@
 ### Integration of Open5GS with srsRAN 4G Using ZeroMQ (Virtual RF)
 This guide outlines the steps for integrating Open5GS with srsRAN_4G using ZeroMQ (virtual RF) for LTE testing in a loopback setup. The integration is intended for learning and validation using official documentation and open-source tools.
 
-## Prerequisites and Dependencies 
+### Prerequisites and Dependencies 
     $ apt install build-essential cmake libfftw3-dev libmbedtls-dev libboost-program-options-dev libconfig++-dev libsctp-dev libzmq3-dev
     $ apt install gcc-11 g++-11
     $ update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 11 --slave /usr/bin/g++ g++ /usr/bin/g++-11
@@ -10,7 +10,7 @@ This guide outlines the steps for integrating Open5GS with srsRAN_4G using ZeroM
     $ gcc -v
 
 
-## Clone and Build srsRAN_4G
+### Clone and Build srsRAN_4G
     $ git clone https://github.com/srsran/srsRAN_4G.git
     $ cd srsRAN_4G
     $ mkdir build
@@ -18,7 +18,7 @@ This guide outlines the steps for integrating Open5GS with srsRAN_4G using ZeroM
     $ cmake ../ -DENABLE_RF_PLUGINS=OFF
     $ make -j`nproc`
 
-## Copy configuration files:
+### Copy configuration files:
     ## srsenb Configuration
     $ cd srsRAN_4G/srsenb
     $ cp enb.conf.example ../build/srsenb/enb.conf
@@ -30,7 +30,7 @@ This guide outlines the steps for integrating Open5GS with srsRAN_4G using ZeroM
     $ nano ../build/srsenb/rr.conf   #Use loopback IPs for testing.
 
 
-## srsUE Configuration
+### srsUE Configuration
 
     $ cd srsRAN_4G/srsue
     $ cp ue.conf.example ../build/srsue/ue.conf
