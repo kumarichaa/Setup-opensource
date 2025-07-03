@@ -50,22 +50,17 @@ To check the status of this type of service, you must first create a service uni
 
 
 ### Step 4: Run gNB and UE
-
-Start the simulated gNB and UE:
+    ##Start the simulated gNB and UE:
 
     $ ./nr-gnb -c ../config/open5gs-gnb.yaml
     $ ./nr-ue -c ../config/open5gs-ue.yaml
 
 ### Step 5: View Core Logs
-
-Tail AMF logs to verify the SUPI profile activity:
-
     $ tail -f /open5gs/install/var/log/open5gs/amf.log
 ![AMF_logs](../../Pictures/AMF_logs.png)
 
 
 ### To adjust the logging level (helpful during debugging):
-
     $ nano amf.yaml  # Update the log level to debug/info/etc.
     $ systemctl restart open5gs-amfd.service 
 
@@ -89,6 +84,6 @@ Important Notes
     Profile B is not currently supported in UERANSIM.
 
 Note:
-    I completed the integration of open-source tools for learning purposes, primarily using official documentation from Open5GS and UERANSIM.
+    The integration of open-source tools for learning purposes, primarily using official documentation from Open5GS and UERANSIM.
 
 

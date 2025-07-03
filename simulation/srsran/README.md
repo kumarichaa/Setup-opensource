@@ -81,6 +81,6 @@ Also pcap files
 For more information attached wireshark packets also captured_pcap folder
 
 Note: 
-    I completed the integration of open-source tools for learning purposes, primarily using official documentation from Open5GS and srsRAN_4G.
+    The integration of open-source tools for learning purposes, primarily using official documentation from Open5GS and srsRAN_4G.
 
 

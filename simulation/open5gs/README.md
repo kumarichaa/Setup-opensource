@@ -156,7 +156,7 @@ Changes according to need then save it and start services
 
 
 Note: 
-    I completed the integration of open-source tools for learning purposes, primarily using official documentation from Open5GS and UERANSIM.
+    The integration of open-source tools for learning purposes, primarily using official documentation from Open5GS and UERANSIM.
 
 
 

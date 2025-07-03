@@ -92,4 +92,4 @@ If all configuration is applied correctly, then the UE and gNB should successful
 For more information attached wireshark packets also captured_pcap folder
 
 Note: 
-    I completed the integration of open-source tools for learning purposes, primarily using official documentation from Open5GS and UERANSIM.
+    The integration of open-source tools for learning purposes, primarily using official documentation from Open5GS and UERANSIM.

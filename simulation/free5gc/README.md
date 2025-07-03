@@ -149,9 +149,5 @@ If all configuration is applied correctly, then the UE and gNB should successful
 For more information attached wireshark packets also captured_pcap folder
 
 Note: 
-    I completed the integration of open-source tools for learning purposes, primarily using official documentation from free5gc and UERANSIM.
+    The integration of open-source tools for learning purposes, primarily using official documentation from free5gc and UERANSIM.
 
-### More Info visit Official Site: 
-    Free5gc: https://free5gc.org
-    MongoDB Docs: https://www.mongodb.com/docs
-    Go Lang Docs: https://golang.org/doc/install
